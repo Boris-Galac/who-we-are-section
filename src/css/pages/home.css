@@ -1,8 +1,9 @@
 /* 👉 ABOUT-US section */
 .about-us-section {
   position: relative;
-  height: 100vh;
-  padding-block: 32px;
+  min-height: 100%;
+  background: linear-gradient(150deg, #295293, #4d91ff);
+  isolation: isolate;
 }
 .about-us-section::before {
   content: "";
@@ -10,23 +11,32 @@
   inset: 0;
   background: url("/src/assets/images/who-are-we-overlay.png") no-repeat center
     center / cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.2;
   z-index: -1;
 }
 .about-us-inner-container {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 54px;
 }
+.about-us-content-box {
+  position: relative;
+}
 .about-us-content-box-wrapper {
   display: grid;
   grid-template-rows: 25vh 25vh;
+  /* grid-template-columns: repeat(3, 1fr); */
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
   gap: 16px;
   margin-bottom: 32px;
 }
 .about-us-content-box-row {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
@@ -139,6 +149,32 @@
   grid-row: 1;
   grid-column: 1;
 }
+.about-us-content-box--google-reviews {
+  grid-row: 2;
+  grid-column: 2/-1;
+}
+.about-us-content-box--google-stats {
+  padding: 16px;
+  isolation: isolate;
+  background: linear-gradient(150deg, #21242b, #132b43);
+}
+.about-us-content-box--google-stats::before {
+  content: "";
+  position: absolute;
+  background: url("/src/assets/images/who-are-we-meet-the-team-logo.png")
+    no-repeat center center / contain;
+  inset: 25%;
+}
+.about-us-content-box--google-stats-body {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.about-us-content-box--google-stats-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
 .about-us-section .container {
   width: min(100% - 32px, 1300px);
 }
@@ -147,7 +183,6 @@
   width: 100%;
   height: 100%;
 }
-
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -231,5 +266,105 @@
   font-size: 32px;
 }
 .google-reviews-bar-reviews-count {
-  font-size: 20px;
+  font-size: 32px;
+  font-weight: 300;
+}
+.about-us-google-review-header-first-row {
+  margin-bottom: 24px;
+}
+.about-us-google-review-header-first-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.external-icon {
+  cursor: pointer;
+}
+/* MODAL for PROMO VIDEO */
+.video-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.video-modal-overlay.active {
+  display: flex;
+}
+
+.video-modal-content {
+  position: relative;
+  max-width: 900px;
+  width: 90%;
+}
+
+.video-modal-content video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.video-modal-close {
+  position: absolute;
+  top: -40px;
+  right: -10px;
+  font-size: 3rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+@media (max-width: 550px) {
+  .about-us-section {
+    position: relative;
+    min-height: 100%;
+    padding-block: 100px;
+    background: linear-gradient(150deg, #295293, #4d91ff);
+    isolation: isolate;
+  }
+  .about-us-google-review-google-icon {
+    width: 48px !important;
+    aspect-ratio: 1;
+    margin-left: auto;
+  }
+  .about-us-google-review-header {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-us-google-review-header-name {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .about-us-content-box-wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+  .about-us-content-box--google-reviews {
+    grid-row: unset;
+    grid-column: unset;
+  }
+  .about-us-google-review-paragraph {
+    line-height: 160%;
+    width: 69%;
+  }
+  .about-us-google-review {
+    color: hsl(212, 18%, 17%);
+    display: grid;
+    grid-template-rows: auto 2fr auto;
+    padding: 16px;
+  }
+  .about-us-google-review-stars-illustration {
+    width: 79% !important;
+  }
+  .about-us-google-review-google-icon {
+    margin-inline: auto;
+    margin-bottom: 32px;
+  }
+  .about-us-content-box:nth-child(n + 2):nth-child(-n + 4) {
+    height: 300px;
+  }
 }
