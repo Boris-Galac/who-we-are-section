@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Kanit", sans-serif;
+  color: #fff;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+}
+.h2-heading {
+  position: relative;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: clamp(2rem, 7vw, 3rem);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+.h2-heading::before {
+  content: attr(data-h2-heading);
+  position: absolute;
+  left: 0;
+  display: block;
+  top: -25px;
+  width: max-content;
+  height: 100%;
+  font-size: 3rem;
+  color: inherit;
+  opacity: 0.2;
+  z-index: -1;
+  animation: h2-subheading 5s ease-in-out infinite alternate;
+}
+@keyframes h2-subheading {
+  from {
+    letter-spacing: 0px;
+  }
+  to {
+    letter-spacing: 10px;
+  }
+}
+.heading-line {
+  height: 1px;
+  width: 100%;
+  margin-left: 10px;
+  background-color: #ffffff;
+}

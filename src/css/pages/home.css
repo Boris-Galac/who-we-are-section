@@ -1,0 +1,235 @@
+/* 👉 ABOUT-US section */
+.about-us-section {
+  position: relative;
+  height: 100vh;
+  padding-block: 32px;
+}
+.about-us-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/src/assets/images/who-are-we-overlay.png") no-repeat center
+    center / cover;
+  z-index: -1;
+}
+.about-us-inner-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 54px;
+}
+.about-us-content-box-wrapper {
+  display: grid;
+  grid-template-rows: 25vh 25vh;
+  width: 100%;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.about-us-content-box-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.about-us-content-box-row:nth-of-type(1) {
+  grid-template-columns: 2fr 1fr;
+}
+.about-us-content-box-row:nth-of-type(1) .about-us-content-box {
+  position: relative;
+}
+.about-us-video-play-btn {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  transition: 0.3s;
+}
+.about-us-video-play-btn:hover {
+  scale: 1.05;
+  cursor: pointer;
+  filter: drop-shadow(0 0 64px white);
+  outline: 1px solid white;
+  border-radius: 100%;
+}
+.about-us-content-box-row:nth-of-type(2) {
+  grid-template-columns: 1fr 2fr;
+}
+.about-us-content-box--meet-the-team {
+  background: linear-gradient(150deg, #8eb3ec, #327bed);
+  padding: 16px;
+}
+.about-us-content-box--meet-the-team-logo {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+}
+.who-are-we-whatsapp-arrow-icon {
+  scale: 2;
+  margin-right: 24px;
+  transition: 0.3s;
+}
+.who-are-we-whatsapp-arrow-icon:hover {
+  scale: 2.5;
+}
+.about-us-content-box-row--whatsapp {
+  position: relative;
+  padding: 16px;
+  background: linear-gradient(150deg, #c5ffda 0%, #0cc143 53%);
+}
+.who-are-we-whatsapp-logo {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+}
+.about-us-request-quote-btn {
+  position: relative;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-transform: uppercase;
+  color: #fff;
+  border-radius: 5px;
+  outline: 2px solid white;
+  padding-block: 10px;
+  padding-inline: 20px;
+  background-color: rgba(0, 0, 0, 0.202);
+  transition: 0.3s;
+}
+.about-us-request-quote-btn:hover {
+  gap: 32px;
+}
+.about-us-content-box-header-headline-wrapper {
+  display: flex;
+  flex-direction: column;
+  /* gap: 8px; */
+}
+.about-us-content-box-header-first-headline {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.about-us-content-box-header-headline {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 20px;
+}
+.about-us-content-box {
+  outline: 1px solid hsl(0, 0%, 100%);
+  overflow: hidden;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.about-us-content-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-us-content-box-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.about-us-content-box-promo-video {
+  width: 100%;
+  height: 100%;
+  grid-row: 1;
+  grid-column: 1;
+}
+.about-us-section .container {
+  width: min(100% - 32px, 1300px);
+}
+/* SWIPER */
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.about-us-google-review {
+  color: hsl(212, 18%, 17%);
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  padding: 16px;
+}
+.about-us-google-review > * {
+  width: 100%;
+}
+.about-us-google-review-header-avatar {
+  width: 58px !important;
+  aspect-ratio: 1;
+}
+.about-us-google-review-header {
+  display: flex;
+  justify-content: space-between;
+}
+.about-us-google-review-header-name-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-align: end;
+}
+.about-us-google-review-header-name {
+  font-size: 32px;
+  font-weight: 500;
+}
+.about-us-google-review-google-icon {
+  width: 78px !important;
+  aspect-ratio: 1;
+}
+.about-us-google-review-header-date {
+  color: #707378;
+}
+.about-us-google-review-stars-illustration {
+  width: 25% !important;
+  margin: auto;
+}
+.about-us-google-review-paragraph {
+  font-weight: 300;
+  line-height: 150%;
+  width: 85%;
+  text-align: center;
+  margin: auto;
+}
+/* Google reviews bar */
+.about-us-google-reviews-bar-heading {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 300;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.google-reviews-bar {
+  background-color: #21242b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 100px;
+  padding: 8px;
+  width: 70%;
+  margin-inline: auto;
+  outline: 2px solid white;
+  filter: drop-shadow(0 0 16px white);
+}
+.google-reviews-bar-count {
+  font-size: 32px;
+}
+.google-reviews-bar-reviews-count {
+  font-size: 20px;
+}
