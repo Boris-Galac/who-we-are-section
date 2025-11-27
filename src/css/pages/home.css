@@ -198,10 +198,23 @@
   object-fit: cover;
 }
 .about-us-google-review {
+  position: relative;
   color: hsl(212, 18%, 17%);
   display: grid;
   grid-template-rows: 1fr 2fr 1fr;
   padding: 16px;
+  isolation: isolate;
+}
+.about-us-google-review::before {
+  content: "";
+  position: absolute;
+  background: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.2), transparent);
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 60px;
+  z-index: -1;
 }
 .about-us-google-review > * {
   width: 100%;
@@ -239,8 +252,25 @@
   font-weight: 300;
   line-height: 150%;
   width: 85%;
-  text-align: center;
+  text-align: justify;
   margin: auto;
+}
+.who-we-are-since-2014-heading {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  padding-block: 5px;
+  padding-inline: 55px;
+  border-radius: 100px;
+  outline: 1px solid white;
+  backdrop-filter: blur(5px);
+}
+.about-us-content-box {
+  transition: 0.5s;
+}
+.about-us-content-box:hover {
+  scale: 1.05;
 }
 /* Google reviews bar */
 .about-us-google-reviews-bar-heading {
@@ -349,7 +379,8 @@
   }
   .about-us-google-review-paragraph {
     line-height: 160%;
-    width: 69%;
+    width: 100%;
+    margin-bottom: 16px;
   }
   .about-us-google-review {
     color: hsl(212, 18%, 17%);
@@ -359,10 +390,11 @@
   }
   .about-us-google-review-stars-illustration {
     width: 79% !important;
+    margin-bottom: 16px;
   }
   .about-us-google-review-google-icon {
     margin-inline: auto;
-    margin-bottom: 32px;
+    margin-bottom: 16px;
   }
   .about-us-content-box:nth-child(n + 2):nth-child(-n + 4) {
     height: 300px;
